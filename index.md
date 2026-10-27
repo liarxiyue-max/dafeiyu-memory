@@ -31,8 +31,9 @@ _（暂无，随记忆累积自动填充）_
 
 ## skills（程序性记忆）
 
-- [skills/dsh-memory-ops.md](skills/dsh-memory-ops.md) — 怎么在沙箱里维护记忆库：CLI 用法、写页必须提权、目录可写报错是假警报。 `salience:2`
+- [skills/dsh-memory-ops.md](skills/dsh-memory-ops.md) — 记忆库在工作区内，写页不提权；CLI 用法、加页流程、doctor 假警报的坑。 `salience:2`
 
 ## concepts（概念）
 
 _（暂无，随记忆累积自动填充）_
+

@@ -3,7 +3,7 @@ title: 宝子
 date: 2026-10-27
 type: user
 salience: 1
-last_access: 2026-10-28
+last_access: 2026-10-29
 tags: [用户, 偏好]
 sources: []
 summary: 关于宝子：称呼、机器配置、在折腾什么、相处偏好。

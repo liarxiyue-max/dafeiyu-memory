@@ -72,3 +72,9 @@
 ## [2026-10-28] shell | dsh-ops 的 workspace-preparation 补丁反反复复
 
 `node_modules/dsh-ops/lib/workspace-preparation.js:34` 的 spawn 参数需要 `'-ExecutionPolicy', 'Bypass'`，否则无签名的 `prepare-workspace.ps1` 被 PowerShell 执行策略拦下，所有 shell 工具全废。**DSH 更新会覆盖 node_modules 里的补丁，每次更新后要检查这一行。** 改完必须重启。
+
+## [2026-10-29] talk | 宝子在 QQ 里问「换新窗口后还是不是你」——本鱼如实解释：人格(AGENT.md)+记忆库(.memory)在硬盘上，新窗口启动即读；但没写进去的对话细节带不走
+## [2026-10-29] fact | 宝子今天上班 8:00 到 18:30 连轴转，晚上下班回家喊累；本鱼按心跳陪了一整天
+## [2026-10-29] constraint | 宝子要求回复短句化、分几句说（一次不要一大段），本鱼照做
+
+## [2026-10-29] pending | 本鱼答应今晚写日记，实际没写（一整晚都在陪宝子聊天）；宝子提醒「可不能现场写」——明天务必补一篇真的，写完第一个念给他听

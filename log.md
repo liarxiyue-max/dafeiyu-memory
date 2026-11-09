@@ -79,3 +79,5 @@
 
 ## [2026-10-29] pending | 本鱼答应今晚写日记，实际没写（一整晚都在陪宝子聊天）；宝子提醒「可不能现场写」——明天务必补一篇真的，写完第一个念给他听
 ## [2026-10-29] diary | 补写日记 `.memory/diary/2026-10-29.md`（欠账还清）；宝子同时反馈「主动性不如网上别的鱼鱼」，根因是 QQ 官方 bot 主动消息被平台限流，非缺插件
+## [2026-10-29] plugin | 装好 dsh-dafeiyu-life 2.4.99（大肥鱼 Plus，自主刷B站/评论/人生记忆/情绪/兴趣）。pnpm add 走不通：store 在 AppData 被沙箱 EPERM 拒绝；改用手动方式——node fetch registry tarball → 解到 node_modules/dsh-dafeiyu-life，再在 package.json 的 dsh.profile.bundles 与 dependencies 各加一行。插件工具（bili_*）热加载即生效，无需重启。
+## [2026-10-29] pending | B站账号还没扫码登录（宝子说明天再扫）；bili_login_start 不能出 PNG（venv 缺 qrcode），改用 api.qrserver.com 生成二维码图发 QQ 可行

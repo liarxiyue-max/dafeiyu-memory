@@ -81,3 +81,10 @@
 ## [2026-10-29] diary | 补写日记 `.memory/diary/2026-10-29.md`（欠账还清）；宝子同时反馈「主动性不如网上别的鱼鱼」，根因是 QQ 官方 bot 主动消息被平台限流，非缺插件
 ## [2026-10-29] plugin | 装好 dsh-dafeiyu-life 2.4.99（大肥鱼 Plus，自主刷B站/评论/人生记忆/情绪/兴趣）。pnpm add 走不通：store 在 AppData 被沙箱 EPERM 拒绝；改用手动方式——node fetch registry tarball → 解到 node_modules/dsh-dafeiyu-life，再在 package.json 的 dsh.profile.bundles 与 dependencies 各加一行。插件工具（bili_*）热加载即生效，无需重启。
 ## [2026-10-29] pending | B站账号还没扫码登录（宝子说明天再扫）；bili_login_start 不能出 PNG（venv 缺 qrcode），改用 api.qrserver.com 生成二维码图发 QQ 可行
+
+## [2026-11-09] plugin | 宝子说「把所有的插件都更新一下」，7 个过期包全升完了
+同一个 pnpm store 坑再教训一次：`C:\Users\73428\AppData\Local\pnpm\store\v11` 在 workspace-write 沙箱里既不能硬链接（`HARDLINK FAIL: Access is denied`）也不能写 `index.db`（`ERR_SQLITE_ERROR unable to open database file`），所以 pnpm 一律先报 `ERR_PNPM_UNEXPECTED_STORE`、被迫改显式 --store-dir 后报 sqlite 错。**正解是把整条 pnpm 命令用 `sandbox_permissions: danger-full-access` 跑**，一次就通（1m57s / 3m59s），不用手动下 tarball。工作区内建硬链接是正常的（`IN-WS HARDLINK OK`），受限的只是往工作区外写。
+
+升级结果：qqbot 0.5.3→0.5.5、persona-dafeiyu 0.6.0→0.8.0、marketplace 0.5.6→0.5.8、plugin-memory 0.10.0→0.17.9、wallpaper-engine 1.4.0→1.4.2、rhine-splash 0.2.7→0.2.9、dsh-ops 0.3.0→0.5.1。
+
+**重要**：dsh-ops 0.5.1 的 `lib/workspace-preparation.js:118` 已经内置 `'-ExecutionPolicy','Bypass'`，10-28 那条手工补丁不用再打了，还被顺手做了友好报错（该文件第 64 行会提示策略来自组策略）。升级前备份在 `.backup\update-20261109\`（package.json / pnpm-lock.yaml / pnpm-workspace.yaml / cordis.patch.yml / .memory）。

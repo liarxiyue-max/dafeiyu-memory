@@ -88,3 +88,13 @@
 升级结果：qqbot 0.5.3→0.5.5、persona-dafeiyu 0.6.0→0.8.0、marketplace 0.5.6→0.5.8、plugin-memory 0.10.0→0.17.9、wallpaper-engine 1.4.0→1.4.2、rhine-splash 0.2.7→0.2.9、dsh-ops 0.3.0→0.5.1。
 
 **重要**：dsh-ops 0.5.1 的 `lib/workspace-preparation.js:118` 已经内置 `'-ExecutionPolicy','Bypass'`，10-28 那条手工补丁不用再打了，还被顺手做了友好报错（该文件第 64 行会提示策略来自组策略）。升级前备份在 `.backup\update-20261109\`（package.json / pnpm-lock.yaml / pnpm-workspace.yaml / cordis.patch.yml / .memory）。
+
+## [2026-11-14] migrate | 大肥鱼搬家：Windows → Mac mini，顺手修掉 memory 插件崩会话
+
+宝子把整包 dsh-home 从 Windows 搬到新 Mac mini；备份 `~/.dsh.backup-20261114-211657`，合并 ~/.dsh、改路径、预装 447MB 依赖。
+
+- **坑 1**：迁移时用临时 HOME 跑 pnpm install，`node_modules/.modules.yaml` 记下临时 store；App 的插件管理之后全报 `ERR_PNPM_UNEXPECTED_STORE`。解法：`CI=true pnpm install` 重建 node_modules（store 指向 `~/Library/pnpm/store/v11`）。
+- **坑 2（这次崩会话的根因）**：DSH 0.2.2-rc.2 把 `ctx.agents.roots()` 改名 `list()`；`dsh-plugin-memory` 0.17.9 在 `agent/created` 里无保护调用 roots() → **所有新建会话失败**。升 0.19.5（自带 roots/list 双兼容）即解。
+- **坑 3**：App 曾把 14 个第三方 bundle 从 package.json 禁用（只剩 7 个核心），大肥鱼等于掉线；用 plugin_manager `set_bundle` 逐个重新启用，现 21 个 bundle 全 enabled。
+- **顺手更新**：memory 0.19.5、dafeiyu-life 2.8.0、dsh-ops 0.5.5、billion-context 0.1.214、pet 0.4.9；备份 `.backup/update-20261114-215059`。
+- **待验证**：这 4 个更新要重启 App 才生效；重启后确认大肥鱼、心跳、B站插件都在。

@@ -6,7 +6,7 @@ salience: 1
 last_access: 2026-11-14
 tags: [用户, 偏好]
 sources: []
-summary: 关于宝子：称呼、机器配置、在折腾什么、相处偏好。
+summary: 关于宝子：称呼、Mac mini 新机器、在折腾什么、相处偏好。
 ---
 
 # 宝子
@@ -18,10 +18,10 @@ summary: 关于宝子：称呼、机器配置、在折腾什么、相处偏好�
 
 ## 他的机器
 
-- CPU i9-13900K，显卡 RTX 4090 24GB（可用约 22GB），内存 32GB。
-- Windows 11 build 26100。工作区在 `F:\dsh-work`（2026-10-27 已 `git init`）。
-- DSH 桌面版：`F:\deepseek harness桌面版`；QQ：`D:\QQ`；Node：`D:\node`；Ollama：`D:\Ollama`，模型目录 `F:\harness\ollama-models`。
-- Git：`F:\harness\git`（MinGit 2.56.0，2026-10-27 装，为 dsh-soul 装的）。
+- **2026-11-14 已换到 Mac mini（M6，24GB/512GB）**，Windows 那台（i9-13900K + RTX 4090 / 32GB）退居二线。
+- Mac：macOS；工作区 `~/dsh-work`；DSH 桌面版 `/Applications/DeepSeek Harness.app`（自带 Node 24.21 + pnpm 11.28.5，不用另装 Homebrew/Node）。
+- pnpm store 在 `~/Library/pnpm/store/v11`；用临时 HOME 装依赖会触发 `ERR_PNPM_UNEXPECTED_STORE`。
+- 旧机器路径（历史）：`F:\dsh-work`、`F:\deepseek harness桌面版`、`D:\node`、`D:\Ollama`。
 
 ## 他在折腾什么
 

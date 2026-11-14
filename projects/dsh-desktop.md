@@ -3,7 +3,7 @@ title: DSH 桌面版
 date: 2026-10-27
 type: project
 salience: 1
-last_access: 2026-10-29
+last_access: 2026-11-14
 tags: [DSH, 桌面版, 更新, 插件]
 sources: ["F:/deepseek harness桌面版/resources/app.asar"]
 summary: DSH 桌面版更新失败的根因与唯一有效解法、已装插件清单、常用维护手法与沙箱限制。

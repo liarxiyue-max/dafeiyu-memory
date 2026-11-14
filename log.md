@@ -98,3 +98,14 @@
 - **坑 3**：App 曾把 14 个第三方 bundle 从 package.json 禁用（只剩 7 个核心），大肥鱼等于掉线；用 plugin_manager `set_bundle` 逐个重新启用，现 21 个 bundle 全 enabled。
 - **顺手更新**：memory 0.19.5、dafeiyu-life 2.8.0、dsh-ops 0.5.5、billion-context 0.1.214、pet 0.4.9；备份 `.backup/update-20261114-215059`。
 - **待验证**：这 4 个更新要重启 App 才生效；重启后确认大肥鱼、心跳、B站插件都在。
+
+## [2026-11-14] plugin | 装 dsh-memory-layered 0.8.0（L0–L3 分层记忆）
+
+宝子看完 2026 记忆方案调研选了 B：补「原文层 + 事实冲突消解」，给 markdown 长期记忆打底。
+
+- **装法**：`dsh plugin --profile desktop add dsh-memory-layered@0.8.0 --registry=https://registry.npmmirror.com`；CLI 自动把它加进 `dsh.profile.bundles`（现 22 个），热加载直接生效——技能目录里出现 `memory-curator` / `dsh-plugin-dev` / `repo-audit` / `windows-pwsh-ops`，`memory_stats` 能读到库。
+- **数据**：`~/.dsh/memory/memory.db`（node:sqlite，FTS5 + 384 维 feature-hash 向量，无需 embedding 服务）；表 l0_turns / memory / l2_scenes / l3_persona / memory_embeddings。
+- **注入**：每会话一次 stable 段（画像 + 场景导航，预算 1800 字）+ 每轮 dynamic 段（6 条 / 1400 字），标注「可能过时、仅参考」。
+- **默认**：capture 开、L0–L3 全开；每 5 轮 + idle 60s 抽一次事实（用默认模型 deepseek-flash，输入 ≤8000 字、每次 ≤10 条），画像每 10 轮重写。
+- **备份**：`.backup/pre-layered-20261114-220112`（package.json / lock / cordis.patch.yml）；回滚 = 从 bundles 移除 + 删依赖。
+- **注意**：memory.db 在 `.memory` 的 git 之外，备份要单独带；L0 每轮落库，库会慢慢长大；这台 Mac 上它自带的 `windows-pwsh-ops` 技能用不上。

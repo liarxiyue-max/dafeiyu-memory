@@ -3,7 +3,7 @@ title: 宝子
 date: 2026-10-27
 type: user
 salience: 1
-last_access: 2026-11-14
+last_access: 2026-11-15
 tags: [用户, 偏好]
 sources: []
 summary: 关于宝子：称呼、Mac mini 新机器、在折腾什么、相处偏好。

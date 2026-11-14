@@ -3,7 +3,7 @@ title: dsh-memory 维护手法
 date: 2026-10-27
 type: skill
 salience: 2
-last_access: 2026-11-14
+last_access: 2026-11-15
 tags: [记忆库, dsh-memory, 沙箱]
 sources: []
 summary: 记忆库在工作区内，写页不提权；CLI 用法、加页流程、doctor 假警报的坑。

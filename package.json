@@ -1,0 +1,53 @@
+{
+  "name": "dsh-profile-desktop",
+  "private": true,
+  "dsh": {
+    "profile": {
+      "bundles": [
+        "@deepseek-ai/dsh-base",
+        "@deepseek-ai/dsh-web-app",
+        "@deepseek-ai/dsh-experimental-forge-bundle",
+        "@deepseek-ai/dsh-experimental-auto-review",
+        "@deepseek-ai/dsh-experimental-plugin-market-bundle",
+        "@deepseek-ai/dsh-experimental-voice-input-bundle",
+        "@deepseek-ai/dsh-personalized-recommendations",
+        "dsh-plugin-memory",
+        "dsh-persona-dafeiyu",
+        "dsh-agent-md",
+        "dsh-dafeiyu-life",
+        "dsh-ops",
+        "dsh-pet",
+        "dsh-plugin-wallpaper-engine",
+        "dsh-soul",
+        "dsh-startup-screen",
+        "dsh-whale-widget",
+        "dsh-plugin-marketplace",
+        "@tencent-connect/dsh-qqbot",
+        "dsh-memory-layered",
+        "billion-context",
+        "dsh-rhine-splash",
+        "dsh-daily-schedule",
+        "dsh-image-studio"
+      ]
+    }
+  },
+  "dependencies": {
+    "@tencent-connect/dsh-qqbot": "^0.5.5",
+    "billion-context": "0.1.215",
+    "dsh-agent-md": "link:./vendor/dsh-agent-md",
+    "dsh-dafeiyu-life": "2.8.0",
+    "dsh-daily-schedule": "link:./vendor/dsh-daily-schedule",
+    "dsh-image-studio": "github:aa1355721445-lgtm/dsh-image-studio",
+    "dsh-memory-layered": "0.8.0",
+    "dsh-ops": "0.5.5",
+    "dsh-persona-dafeiyu": "^0.8.0",
+    "dsh-pet": "0.4.9",
+    "dsh-plugin-marketplace": "0.5.10",
+    "dsh-plugin-memory": "0.19.5",
+    "dsh-plugin-wallpaper-engine": "^1.4.2",
+    "dsh-rhine-splash": "^0.2.9",
+    "dsh-soul": "link:./vendor/dsh-soul-1.5.0",
+    "dsh-startup-screen": "file:./vendor/dsh-startup-screen-1.2.0.tgz",
+    "dsh-whale-widget": "^0.4.2"
+  }
+}

@@ -1,0 +1,154 @@
+# QQ 机器人凭据（扫码绑定自动生成）
+- id: ui-settings-account
+  name: '@deepseek-ai/dsh-client-ui-settings-account'
+  config:
+    version: 1
+    step: done
+    purpose: null
+    process: standard
+    completion: skipped
+    usage: compact
+    developerTools: false
+- id: ui-chat
+  name: '@deepseek-ai/dsh-client-ui-chat'
+  config:
+    transcriptView: standard
+    performanceUsage: compact
+- id: ui-settings
+  name: '@deepseek-ai/dsh-client-ui-settings'
+  config:
+    enabled: false
+- id: im-qqbot
+  config:
+    {
+      appId: "1906053322",
+      appSecret: pfVMD5yrlfaVRNKHFDCBBBCDFILPTYdj,
+      streaming: false,
+      access: { c2cMode: allowlist, c2cAllow: [ 4C1AAD534A5BEFA9007C8F9117081652 ] }
+    }
+  disabled: false
+- id: agent-default-model
+  name: "@deepseek-ai/dsh-agent-default-model"
+  config:
+    provider: deepseek-account
+    model: deepseek-flash
+    reasoningEffort: max
+- id: plugin-marketplace
+  name: dsh-plugin-marketplace
+  config:
+    install:
+      pkg: ""
+      action: install
+      ts: 0
+    installState:
+      status: ok
+      message: Completed. Restart DSH to load changes.
+      pkg: "@tencent-connect/dsh-qqbot"
+      ts: 1794745839756
+    inventory:
+      profile: desktop
+      packages:
+        - name: "@deepseek-ai/dsh-base"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-experimental-auto-review"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-experimental-forge-bundle"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-experimental-plugin-market-bundle"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-experimental-voice-input-bundle"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-personalized-recommendations"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@deepseek-ai/dsh-web-app"
+          version: ""
+          managed: false
+          bundle: true
+        - name: "@tencent-connect/dsh-qqbot"
+          version: 0.5.5
+          managed: true
+          bundle: true
+        - name: billion-context
+          version: 0.1.215
+          managed: true
+          bundle: true
+        - name: dsh-agent-md
+          version: 0.2.0
+          managed: true
+          bundle: true
+        - name: dsh-dafeiyu-life
+          version: 2.8.0
+          managed: true
+          bundle: true
+        - name: dsh-daily-schedule
+          version: 0.4.0
+          managed: true
+          bundle: true
+        - name: dsh-image-studio
+          version: 0.5.1
+          managed: true
+          bundle: true
+        - name: dsh-memory-layered
+          version: 0.8.0
+          managed: true
+          bundle: true
+        - name: dsh-ops
+          version: 0.5.5
+          managed: true
+          bundle: true
+        - name: dsh-persona-dafeiyu
+          version: 0.8.0
+          managed: true
+          bundle: true
+        - name: dsh-pet
+          version: 0.4.9
+          managed: true
+          bundle: true
+        - name: dsh-plugin-marketplace
+          version: 0.5.10
+          managed: true
+          bundle: true
+        - name: dsh-plugin-memory
+          version: 0.19.5
+          managed: true
+          bundle: true
+        - name: dsh-plugin-wallpaper-engine
+          version: 1.4.2
+          managed: true
+          bundle: true
+        - name: dsh-rhine-splash
+          version: 0.2.9
+          managed: true
+          bundle: true
+        - name: dsh-soul
+          version: 1.5.0
+          managed: true
+          bundle: true
+        - name: dsh-startup-screen
+          version: 1.2.0
+          managed: true
+          bundle: true
+        - name: dsh-whale-widget
+          version: 0.4.2
+          managed: true
+          bundle: true
+- id: ui-theme
+  name: "@deepseek-ai/dsh-client-ui-theme"
+  config:
+    fontSize: 14
+- id: rhine-splash
+  name: dsh-rhine-splash
+  config:
+    resumeEffect: off
